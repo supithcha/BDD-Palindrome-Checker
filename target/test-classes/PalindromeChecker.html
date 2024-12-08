@@ -1,0 +1,29 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+    <title>Palindrome Checker</title>
+</head>
+<body>
+<h1>Palindrome Checker</h1>
+<p>Check if the word <span concordion:echo="#word">word</span> is a palindrome.</p>
+<p>Result: <span concordion:echo="#isPalindrome">true/false</span></p>
+
+<table>
+    <tr>
+        <th>Word</th>
+        <th>Is Palindrome?</th>
+    </tr>
+    <tr>
+        <td concordion:set="#word">racecar</td>
+        <td concordion:assert-equals="true">true</td>
+    </tr>
+    <tr>
+        <td concordion:set="#word">hello</td>
+        <td concordion:assert-equals="false">false</td>
+    </tr>
+    <tr>
+        <td concordion:set="#word">testword</td>
+        <td concordion:assert-equals="false">true</td> <!-- This should fail -->
+    </tr>
+</table>
+</body>
+</html>
